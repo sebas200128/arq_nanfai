@@ -15,6 +15,7 @@ import java.time.temporal.ChronoUnit;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import bd.Conexion; // este es tu paquete de conexión
+import controlador.VentaControlador;
 import java.util.ArrayList;
 
 /**
@@ -95,17 +96,8 @@ public class frmAlertas extends javax.swing.JFrame {
 
     private void btnAlertasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlertasActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel modelo = new DefaultTableModel();
-        modelo.setColumnIdentifiers(new String[]{"ID", "Código", "Nombre", "Cantidad", "Vencimiento"});
-
-        ProductoControlador pc = new ProductoControlador();
-        List<String[]> alertas = pc.obtenerProductosBajoStockOVencimiento();
-
-        for (String[] fila : alertas) {
-            modelo.addRow(fila);
-        }
-
-        tblAlertas.setModel(modelo);
+        VentaControlador vc = new VentaControlador();
+        vc.cargarAlertasStockYVencimiento(tblAlertas);
     }//GEN-LAST:event_btnAlertasActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed

@@ -5,6 +5,7 @@
 package vista;
 
 import controlador.ProductoControlador;
+import controlador.VentaControlador;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -207,17 +208,8 @@ public class frmActualizarEliminarProducto extends javax.swing.JFrame {
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel modelo = new DefaultTableModel();
-        modelo.setColumnIdentifiers(new String[]{"ID", "Código", "Nombre", "Precio", "Cantidad"});
-
-        ProductoControlador pc = new ProductoControlador();
-        List<String[]> productos = pc.obtenerProductos();
-
-        for (String[] fila : productos) {
-            modelo.addRow(fila);
-        }
-
-        tblProductos.setModel(modelo);
+        VentaControlador vc = new VentaControlador();
+        vc.cargarTablaStockDisponible(tblProductos);
     }//GEN-LAST:event_btnMostrarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
