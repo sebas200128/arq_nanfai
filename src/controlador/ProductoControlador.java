@@ -67,14 +67,23 @@ public class ProductoControlador {
     }
 
     private String generarCodigoProducto(Connection con) throws SQLException {
-        String sql = "SELECT COUNT(*) FROM producto";
+        String sql = "SELECT codigo FROM producto ORDER BY idProducto DESC LIMIT 1";
         PreparedStatement ps = con.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
+
+        int siguienteNumero = 1;
+
         if (rs.next()) {
-            int count = rs.getInt(1) + 1;
-            return String.format("PR%04d", count);
+            String ultimoCodigo = rs.getString("codigo"); // ejemplo: PR0023
+            String numeroStr = ultimoCodigo.substring(2); // "0023"
+            try {
+                siguienteNumero = Integer.parseInt(numeroStr) + 1;
+            } catch (NumberFormatException e) {
+                // Si algo falla, mantenemos el siguienteNumero en 1
+            }
         }
-        return "PR0001";
+
+        return String.format("PR%04d", siguienteNumero);
     }
 
     public boolean actualizarCampoProducto(int idProducto, String campo, String valor) {
@@ -178,4 +187,32 @@ public class ProductoControlador {
         ResultSet rs = ps.executeQuery();
         return rs.next() ? rs.getInt(1) : 1;
     }
+
+    public List<String[]> obtenerProductosBajoStockOVencimiento() {
+        List<String[]> lista = new ArrayList<>();
+        try (Connection con = Conexion.conectar()) {
+            String sql = """
+            SELECT idProducto, codigo, nombreProducto, cantidad, fechaVencimiento
+            FROM producto
+            WHERE cantidad <= 5
+               OR (fechaVencimiento IS NOT NULL AND fechaVencimiento <= CURDATE() + INTERVAL 7 DAY)
+        """;
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                lista.add(new String[]{
+                    rs.getString("idProducto"),
+                    rs.getString("codigo"),
+                    rs.getString("nombreProducto"),
+                    rs.getString("cantidad"),
+                    rs.getString("fechaVencimiento")
+                });
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al obtener alertas de stock o vencimiento: " + e.getMessage());
+        }
+        return lista;
+    }
+
 }

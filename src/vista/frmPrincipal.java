@@ -19,7 +19,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         initComponents();
         this.setLocationRelativeTo(null);
-        setTitle("Principal");
+        setTitle("Ventana Principal");
     }
 
     /**
@@ -35,6 +35,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         btnRegistroUsuario = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         btnRegistroProducto1 = new javax.swing.JButton();
+        btnVentAlertas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,6 +71,14 @@ public class frmPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnVentAlertas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/alerta.png"))); // NOI18N
+        btnVentAlertas.setText("Alertas");
+        btnVentAlertas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVentAlertasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -77,16 +86,16 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSalir)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnSalir)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnRegistroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 183, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnRegistroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnVentAlertas, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(79, 79, 79)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnRegistroProducto1)
-                            .addComponent(btnEditarEliminar))
-                        .addGap(123, 123, 123))))
+                            .addComponent(btnEditarEliminar))))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,8 +105,10 @@ public class frmPrincipal extends javax.swing.JFrame {
                     .addComponent(btnRegistroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEditarEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
-                .addComponent(btnRegistroProducto1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRegistroProducto1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVentAlertas, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
         );
@@ -137,6 +148,14 @@ public class frmPrincipal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnRegistroProducto1ActionPerformed
 
+    private void btnVentAlertasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentAlertasActionPerformed
+        // TODO add your handling code here:
+        frmAlertas alertas = new frmAlertas();
+        alertas.setLocationRelativeTo(null); // Centra la ventana
+        alertas.setVisible(true); // Muestra el nuevo formulario
+        this.dispose(); // Cierra la ventana actual (frmPrincipal)
+    }//GEN-LAST:event_btnVentAlertasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -146,5 +165,6 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnRegistroProducto1;
     private javax.swing.JButton btnRegistroUsuario;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnVentAlertas;
     // End of variables declaration//GEN-END:variables
 }

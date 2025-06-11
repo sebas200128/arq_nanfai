@@ -21,6 +21,8 @@ public class frmActualizarEliminarProducto extends javax.swing.JFrame {
      */
     public frmActualizarEliminarProducto() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        setTitle("Editar Registros");
         cbxCampo.removeAllItems();
         cbxCampo.addItem("nombreProducto");
         cbxCampo.addItem("precio");
