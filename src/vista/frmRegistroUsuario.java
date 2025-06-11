@@ -65,6 +65,7 @@ public class frmRegistroUsuario extends javax.swing.JFrame {
         jLabel4.setText("Rol:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
 
+        btnRegistrarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/registrarUser.png"))); // NOI18N
         btnRegistrarUsuario.setText("Registrar");
         btnRegistrarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,13 +74,14 @@ public class frmRegistroUsuario extends javax.swing.JFrame {
         });
         getContentPane().add(btnRegistrarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 110, 40));
 
+        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver-al-pasado.png"))); // NOI18N
         btnVolver.setText("Volver");
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVolverActionPerformed(evt);
             }
         });
-        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 80, 40));
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 100, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

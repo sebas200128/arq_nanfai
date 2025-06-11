@@ -85,6 +85,7 @@ public class frmRegistroProducto extends javax.swing.JFrame {
         txtFechaVencimiento.setBorder(javax.swing.BorderFactory.createTitledBorder("yyyy-MM-dd"));
         getContentPane().add(txtFechaVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, 140, 50));
 
+        btnRegistrarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/registrar_producto.png"))); // NOI18N
         btnRegistrarProducto.setText("Registrar");
         btnRegistrarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,13 +94,14 @@ public class frmRegistroProducto extends javax.swing.JFrame {
         });
         getContentPane().add(btnRegistrarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 150, 40));
 
+        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver-al-pasado.png"))); // NOI18N
         btnVolver.setText("Volver");
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVolverActionPerformed(evt);
             }
         });
-        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 90, 40));
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 100, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

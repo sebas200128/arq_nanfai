@@ -1,4 +1,3 @@
-
 package modelo;
 
 public class Producto {
@@ -11,8 +10,9 @@ public class Producto {
     private String proveedor;
     private String fechaIngreso;
     private String fechaVencimiento;
+    private String codigo;
 
-    public Producto(int id, String nombre, String categoria, double precio, int cantidad, String proveedor, String fechaIngreso, String fechaVencimiento) {
+    public Producto(int id, String nombre, String categoria, double precio, int cantidad, String proveedor, String fechaIngreso, String fechaVencimiento, String codigo) {
         this.id = id;
         this.nombre = nombre;
         this.categoria = categoria;
@@ -21,6 +21,7 @@ public class Producto {
         this.proveedor = proveedor;
         this.fechaIngreso = fechaIngreso;
         this.fechaVencimiento = fechaVencimiento;
+        this.codigo = codigo;
     }
 
     public Producto() {
@@ -88,6 +89,14 @@ public class Producto {
 
     public void setFechaVencimiento(String fechaVencimiento) {
         this.fechaVencimiento = fechaVencimiento;
+
     }
 
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
 }

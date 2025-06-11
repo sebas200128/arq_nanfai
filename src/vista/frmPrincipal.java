@@ -31,19 +31,22 @@ public class frmPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnRegistroProducto = new javax.swing.JButton();
+        btnEditarEliminar = new javax.swing.JButton();
         btnRegistroUsuario = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
+        btnRegistroProducto1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnRegistroProducto.setText("Registro Producto");
-        btnRegistroProducto.addActionListener(new java.awt.event.ActionListener() {
+        btnEditarEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lapiz.png"))); // NOI18N
+        btnEditarEliminar.setText("Editar o Eliminar Producto");
+        btnEditarEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistroProductoActionPerformed(evt);
+                btnEditarEliminarActionPerformed(evt);
             }
         });
 
+        btnRegistroUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/registrarUser.png"))); // NOI18N
         btnRegistroUsuario.setText("Registro Usuario");
         btnRegistroUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,10 +54,19 @@ public class frmPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/puerta-de-salida.png"))); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
+            }
+        });
+
+        btnRegistroProducto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/registrar_producto.png"))); // NOI18N
+        btnRegistroProducto1.setText("Registro Producto");
+        btnRegistroProducto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistroProducto1ActionPerformed(evt);
             }
         });
 
@@ -65,22 +77,29 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSalir)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnRegistroProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnRegistroUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(243, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnSalir)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnRegistroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 183, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnRegistroProducto1)
+                            .addComponent(btnEditarEliminar))
+                        .addGap(123, 123, 123))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(btnRegistroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(btnRegistroProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRegistroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEditarEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addComponent(btnRegistroProducto1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -94,13 +113,13 @@ public class frmPrincipal extends javax.swing.JFrame {
         this.dispose(); // Cierra la ventana actual (frmPrincipal)
     }//GEN-LAST:event_btnRegistroUsuarioActionPerformed
 
-    private void btnRegistroProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroProductoActionPerformed
+    private void btnEditarEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEliminarActionPerformed
         // TODO add your handling code here:
-        frmRegistroProducto producto = new frmRegistroProducto();
-        producto.setLocationRelativeTo(null);
-        producto.setVisible(true);
+        frmActualizarEliminarProducto actualizar = new frmActualizarEliminarProducto();
+        actualizar.setLocationRelativeTo(null);
+        actualizar.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnRegistroProductoActionPerformed
+    }//GEN-LAST:event_btnEditarEliminarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
@@ -110,12 +129,21 @@ public class frmPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnSalirActionPerformed
 
+    private void btnRegistroProducto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroProducto1ActionPerformed
+        // TODO add your handling code here
+        frmRegistroProducto producto = new frmRegistroProducto();
+        producto.setLocationRelativeTo(null);
+        producto.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnRegistroProducto1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnRegistroProducto;
+    private javax.swing.JButton btnEditarEliminar;
+    private javax.swing.JButton btnRegistroProducto1;
     private javax.swing.JButton btnRegistroUsuario;
     private javax.swing.JButton btnSalir;
     // End of variables declaration//GEN-END:variables
