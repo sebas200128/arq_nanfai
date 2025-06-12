@@ -26,6 +26,7 @@ public class frmVenta extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         setTitle("Registro Venta");
+        this.setSize(410, 385);
 
         List<String> codigos = vc.obtenerCodigosConNombre();
         for (String c : codigos) {

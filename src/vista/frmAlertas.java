@@ -31,6 +31,8 @@ public class frmAlertas extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         setTitle("Reporte de Alertas");
+        this.setSize(560, 450);
+
     }
 
     /**
@@ -163,7 +165,7 @@ public class frmAlertas extends javax.swing.JFrame {
 
                 if (seleccion.contains(nombre) && seleccion.contains(codigo)) {
                     double precio = obtenerPrecioProductoPorNombre(nombre);
-                    int stock = obtenerStockProductoPorNombre(nombre);
+                    int stock = obtenerStockProductoPorCodigo(codigo);
                     double valorizado = precio * stock;
 
                     StringBuilder detalle = new StringBuilder();
@@ -218,12 +220,12 @@ public class frmAlertas extends javax.swing.JFrame {
         }
     }
 
-    private int obtenerStockProductoPorNombre(String nombreProducto) {
+    private int obtenerStockProductoPorCodigo(String codigo) {
         int cantidad = 0;
         try (Connection con = Conexion.conectar()) {
-            String sql = "SELECT cantidad FROM producto WHERE nombreProducto = ?";
+            String sql = "SELECT cantidad FROM producto WHERE codigo = ?";
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, nombreProducto);
+            ps.setString(1, codigo);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 cantidad = rs.getInt("cantidad");

@@ -54,6 +54,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI Historic" size="14" style="2"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="LOGIN"/>
       </Properties>
       <Constraints>

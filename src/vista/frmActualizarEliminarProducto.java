@@ -12,6 +12,7 @@ import javax.swing.table.DefaultTableModel;
 import modelo.Producto;
 
 /**
+ * width
  *
  * @author user
  */
@@ -28,6 +29,7 @@ public class frmActualizarEliminarProducto extends javax.swing.JFrame {
         cbxCampo.addItem("nombreProducto");
         cbxCampo.addItem("precio");
         cbxCampo.addItem("cantidad");
+        this.setSize(560, 640);
 
     }
     private int idProductoActual = -1;
@@ -66,12 +68,12 @@ public class frmActualizarEliminarProducto extends javax.swing.JFrame {
                 txtNuevoValorActionPerformed(evt);
             }
         });
-        getContentPane().add(txtNuevoValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 220, 40));
+        getContentPane().add(txtNuevoValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 350, 40));
 
         jLabel2.setText("ID:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
 
-        getContentPane().add(cbxCampo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 220, 50));
+        getContentPane().add(cbxCampo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 300, 50));
 
         jLabel3.setText("Editar Seleccion:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
@@ -81,7 +83,7 @@ public class frmActualizarEliminarProducto extends javax.swing.JFrame {
                 txtIdProductoActionPerformed(evt);
             }
         });
-        getContentPane().add(txtIdProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 90, 40));
+        getContentPane().add(txtIdProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 100, 40));
 
         tblProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -122,13 +124,13 @@ public class frmActualizarEliminarProducto extends javax.swing.JFrame {
         });
         getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 540, 90, 40));
 
-        btnBuscar.setText("Buscar");
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lupa.png"))); // NOI18N
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, -1, 40));
+        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 40, 40));
 
         btnVolver1.setText("Vover");
         btnVolver1.addActionListener(new java.awt.event.ActionListener() {
@@ -209,6 +211,7 @@ public class frmActualizarEliminarProducto extends javax.swing.JFrame {
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         // TODO add your handling code here:
         VentaControlador vc = new VentaControlador();
+        cargarTablaProductos();
         vc.cargarTablaStockDisponible(tblProductos);
     }//GEN-LAST:event_btnMostrarActionPerformed
 
@@ -248,11 +251,15 @@ public class frmActualizarEliminarProducto extends javax.swing.JFrame {
 
     private void cargarTablaProductos() {
         DefaultTableModel modelo = new DefaultTableModel();
-        modelo.setColumnIdentifiers(new String[]{"ID", "Código", "Nombre", "Precio", "Cantidad"});
-        ProductoControlador pc = new ProductoControlador();
-        for (String[] fila : pc.obtenerProductos()) {
+        modelo.setColumnIdentifiers(new String[]{"Código", "Nombre", "Precio", "Cantidad"});
+
+        VentaControlador vc = new VentaControlador();
+        List<String[]> productos = vc.obtenerProductosConStock();
+
+        for (String[] fila : productos) {
             modelo.addRow(fila);
         }
+
         tblProductos.setModel(modelo);
     }
 

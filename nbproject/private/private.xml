@@ -3,9 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/ARQ_NanfAI/src/main/App.java</file>
-            <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/ARQ_NanfAI/src/modelo/Producto.java</file>
+            <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/ARQ_NanfAI/src/vista/frmLogin.java</file>
+            <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/ARQ_NanfAI/src/controlador/ProductoControlador.java</file>
+            <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/ARQ_NanfAI/src/vista/frmAlertas.java</file>
             <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/ARQ_NanfAI/src/modelo/Usuario.java</file>
+            <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/ARQ_NanfAI/src/vista/frmVenta.java</file>
+            <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/ARQ_NanfAI/src/modelo/Venta.java</file>
+            <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/ARQ_NanfAI/src/vista/frmRegistroUsuario.java</file>
+            <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/ARQ_NanfAI/src/vista/frmPrincipal.java</file>
+            <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/ARQ_NanfAI/src/controlador/VentaControlador.java</file>
+            <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/ARQ_NanfAI/src/main/App.java</file>
+            <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/ARQ_NanfAI/src/vista/frmActualizarEliminarProducto.java</file>
+            <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/ARQ_NanfAI/src/modelo/Producto.java</file>
+            <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/ARQ_NanfAI/src/controlador/UsuarioControlador.java</file>
+            <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/ARQ_NanfAI/src/vista/frmRegistroProducto.java</file>
         </group>
     </open-files>
 </project-private>
