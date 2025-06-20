@@ -215,4 +215,29 @@ public class ProductoControlador {
         return lista;
     }
 
+    public boolean aumentarStockSiExiste(String codigo, int cantidadNueva) {
+        try (Connection con = Conexion.conectar()) {
+            String sql = "UPDATE producto SET cantidad = cantidad + ? WHERE codigo = ?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, cantidadNueva);
+            ps.setString(2, codigo);
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al actualizar stock: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean existeProductoPorCodigo(String codigo) {
+        try (Connection con = Conexion.conectar()) {
+            String sql = "SELECT 1 FROM producto WHERE codigo = ?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, codigo);
+            ResultSet rs = ps.executeQuery();
+            return rs.next();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al verificar código: " + e.getMessage());
+            return false;
+        }
+    }
 }

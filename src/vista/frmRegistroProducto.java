@@ -21,7 +21,7 @@ public class frmRegistroProducto extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         setTitle("Registro Producto");
-        this.setSize(670, 400);
+        this.setSize(670, 440);
     }
 
     /**
@@ -49,41 +49,44 @@ public class frmRegistroProducto extends javax.swing.JFrame {
         txtFechaVencimiento = new javax.swing.JTextField();
         btnRegistrarProducto = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        txtCodigo = new javax.swing.JTextField();
+        btnValidar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Nombre");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 52, -1));
-        getContentPane().add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 130, 32));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 52, -1));
+        getContentPane().add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 130, 32));
 
         jLabel2.setText("Categoria:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
-        getContentPane().add(txtNombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 130, 32));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+        getContentPane().add(txtNombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 130, 32));
 
         jLabel3.setText("Precio:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
-        getContentPane().add(txtCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 130, 32));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
+        getContentPane().add(txtCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 130, 32));
 
         jLabel4.setText("Proveedor:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
-        getContentPane().add(txtProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 130, 32));
-        getContentPane().add(spnCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, 110, 30));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
+        getContentPane().add(txtProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 130, 32));
+        getContentPane().add(spnCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, 110, 30));
 
         jLabel5.setText("Cantidad:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, -1, -1));
 
         jLabel6.setText("Fecha Ingreso:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, -1, -1));
 
         txtFechaIngreso.setBorder(javax.swing.BorderFactory.createTitledBorder("yyyy-MM-dd"));
-        getContentPane().add(txtFechaIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, 140, 50));
+        getContentPane().add(txtFechaIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, 140, 50));
 
         jLabel7.setText("Fecha Vencimiento:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, -1, -1));
 
         txtFechaVencimiento.setBorder(javax.swing.BorderFactory.createTitledBorder("yyyy-MM-dd"));
-        getContentPane().add(txtFechaVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, 140, 50));
+        getContentPane().add(txtFechaVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 140, 50));
 
         btnRegistrarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/registrar_producto.png"))); // NOI18N
         btnRegistrarProducto.setText("Registrar");
@@ -92,7 +95,7 @@ public class frmRegistroProducto extends javax.swing.JFrame {
                 btnRegistrarProductoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegistrarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 150, 40));
+        getContentPane().add(btnRegistrarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 150, 40));
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver-al-pasado.png"))); // NOI18N
         btnVolver.setText("Volver");
@@ -101,31 +104,71 @@ public class frmRegistroProducto extends javax.swing.JFrame {
                 btnVolverActionPerformed(evt);
             }
         });
-        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 100, 40));
+        getContentPane().add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, 100, 40));
+
+        jLabel8.setText("Ingresar codigo existente:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+        getContentPane().add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 120, 30));
+
+        btnValidar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/lupa.png"))); // NOI18N
+        btnValidar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnValidarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnValidar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 40, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarProductoActionPerformed
         // TODO add your handling code here:
+        ProductoControlador pc = new ProductoControlador();
+        String codigo = txtCodigo.getText().trim(); // Campo opcional
+        int cantidad = (int) spnCantidad.getValue();
+
+        // Si el código existe, solo aumentar stock sin validar los demás campos
+        if (!codigo.isEmpty() && pc.existeProductoPorCodigo(codigo)) {
+            if (cantidad <= 0) {
+                JOptionPane.showMessageDialog(this, "La cantidad debe ser mayor a 0");
+                spnCantidad.requestFocus();
+                return;
+            }
+            if (txtFechaIngreso.getText().trim().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Ingresa la fecha de ingreso");
+                txtFechaIngreso.requestFocus();
+                return;
+            }
+
+            if (pc.aumentarStockSiExiste(codigo, cantidad)) {
+                JOptionPane.showMessageDialog(this, "Stock actualizado correctamente para el producto " + codigo);
+                restaurarCamposRegistro();
+            } else {
+                JOptionPane.showMessageDialog(this, "Error al actualizar el stock del producto.");
+            }
+            return; // salir del método
+        }
+
+        // Si es un producto nuevo, validar todos los campos
+        if (!validarCamposProducto()) {
+            return;
+        }
+
+        // Registrar nuevo producto (código se generará automáticamente)
         Producto p = new Producto();
         p.setNombre(txtNombreProducto.getText());
         p.setCategoria(txtCategoria.getText());
         p.setProveedor(txtProveedor.getText());
         p.setPrecio(Double.parseDouble(txtPrecio.getText()));
-        p.setCantidad((int) spnCantidad.getValue());
+        p.setCantidad(cantidad);
         p.setFechaIngreso(txtFechaIngreso.getText());
         p.setFechaVencimiento(txtFechaVencimiento.getText());
 
-        ProductoControlador pc = new ProductoControlador();
         if (pc.registrarProducto(p)) {
-            JOptionPane.showMessageDialog(this, "Producto registrado correctamente");
-            limpiarCamposProducto();
+            JOptionPane.showMessageDialog(this, "Producto registrado correctamente.");
+            restaurarCamposRegistro();
         } else {
-            JOptionPane.showMessageDialog(this, "Error al registrar producto");
-        }
-        if (!validarCamposProducto()) {
-            return;
+            JOptionPane.showMessageDialog(this, "Error al registrar producto.");
         }
 
     }//GEN-LAST:event_btnRegistrarProductoActionPerformed
@@ -137,6 +180,34 @@ public class frmRegistroProducto extends javax.swing.JFrame {
         principal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
+
+    private void btnValidarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValidarActionPerformed
+        // TODO add your handling code here:
+        String codigo = txtCodigo.getText().trim();
+
+        if (codigo.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Ingrese un código para validar.");
+            return;
+        }
+
+        ProductoControlador pc = new ProductoControlador();
+        if (pc.existeProductoPorCodigo(codigo)) {
+            JOptionPane.showMessageDialog(this, "✅ Producto encontrado. Solo puede ingresar la nueva cantidad y fechas.");
+
+            // Deshabilitar campos que no deben modificarse
+            txtNombreProducto.setEnabled(false);
+            txtPrecio.setEnabled(false);
+            txtCategoria.setEnabled(false);
+            txtProveedor.setEnabled(false);
+
+            // Habilitar solo los campos permitidos
+            spnCantidad.setEnabled(true);
+            txtFechaIngreso.setEnabled(true);
+            txtFechaVencimiento.setEnabled(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "❌ El código no existe. Si desea registrar uno nuevo, deje el campo vacío.");
+        }
+    }//GEN-LAST:event_btnValidarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,8 +263,21 @@ public class frmRegistroProducto extends javax.swing.JFrame {
         txtFechaVencimiento.setText("");
     }
 
+    private void restaurarCamposRegistro() {
+        txtNombreProducto.setEnabled(true);
+        txtPrecio.setEnabled(true);
+        txtCategoria.setEnabled(true);
+        txtProveedor.setEnabled(true);
+        spnCantidad.setEnabled(true);
+        txtFechaIngreso.setEnabled(true);
+        txtFechaVencimiento.setEnabled(true);
+        limpiarCamposProducto();
+    }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrarProducto;
+    private javax.swing.JButton btnValidar;
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -202,8 +286,10 @@ public class frmRegistroProducto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JSpinner spnCantidad;
     private javax.swing.JTextField txtCategoria;
+    private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtFechaIngreso;
     private javax.swing.JTextField txtFechaVencimiento;
     private javax.swing.JTextField txtNombreProducto;
