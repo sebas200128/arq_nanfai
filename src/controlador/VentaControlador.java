@@ -163,9 +163,8 @@ public class VentaControlador {
             modelo.addRow(fila);
         }
     }
-    
-    //
 
+    //
     public void cargarAlertasStockYVencimiento(javax.swing.JTable tabla) {
         DefaultTableModel modelo = new DefaultTableModel();
         modelo.setColumnIdentifiers(new String[]{"ID", "Código", "Nombre", "Cantidad", "Vencimiento"});
@@ -213,4 +212,32 @@ public class VentaControlador {
         }
         return lista;
     }
+
+    public List<String[]> obtenerProductosMasVendidos(int dias) {
+        List<String[]> lista = new ArrayList<>();
+        String sql = """
+        SELECT p.codigo, p.nombreProducto, SUM(v.cantidadVendida) AS total_vendido
+        FROM venta v
+        JOIN producto p ON v.codigoProducto = p.codigo
+        WHERE v.fecha >= DATE_SUB(CURDATE(), INTERVAL ? DAY)
+        GROUP BY p.codigo, p.nombreProducto
+        ORDER BY total_vendido DESC
+        LIMIT 10
+        """;
+        try (Connection con = Conexion.conectar(); PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setInt(1, dias);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                lista.add(new String[]{
+                    rs.getString("codigo"),
+                    rs.getString("nombreProducto"),
+                    String.valueOf(rs.getInt("total_vendido"))
+                });
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al obtener predicción de ventas: " + e.getMessage());
+        }
+        return lista;
+    }
+
 }

@@ -43,6 +43,8 @@ public class frmPrincipal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        btnfrmPrediccion = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -99,8 +101,8 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Registrar Usuario");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+        jLabel1.setText("Predicciones Ventas");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
@@ -122,6 +124,19 @@ public class frmPrincipal extends javax.swing.JFrame {
         jLabel5.setText("Venta");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 50, -1, -1));
 
+        btnfrmPrediccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/predicciones.png"))); // NOI18N
+        btnfrmPrediccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnfrmPrediccionActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnfrmPrediccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 60, 50));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Registrar Usuario");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -131,16 +146,16 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSalir)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addGap(25, 25, 25))
         );
 
         pack();
@@ -194,6 +209,14 @@ public class frmPrincipal extends javax.swing.JFrame {
         this.dispose(); // Cierra la ventana actual (frmPrincipal)
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void btnfrmPrediccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnfrmPrediccionActionPerformed
+        // TODO add your handling code here:
+        frmPrediccionVentas prediccion = new frmPrediccionVentas();
+        prediccion.setLocationRelativeTo(null); // Centra la ventana
+        prediccion.setVisible(true); // Muestra el nuevo formulario
+        this.dispose(); // Cierra la ventana actual (frmPrincipal)
+    }//GEN-LAST:event_btnfrmPrediccionActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -204,12 +227,14 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnRegistroUsuario;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnVentAlertas;
+    private javax.swing.JButton btnfrmPrediccion;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
